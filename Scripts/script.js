@@ -24,7 +24,7 @@ function getHumanChoice(){
 }
 
 
-function playRound(humanChoice, ComputerChoice) {
+function playRound(humanChoice, computerChoice) {
     
     const winsAgainst = {
         rock: "scissors",
@@ -41,12 +41,21 @@ function playRound(humanChoice, ComputerChoice) {
     }
     else {
         console.log("You lose! " + computerChoice + " beats " + humanChoice)
-        computerChoice += 1
+        computerScore += 1
     }
 }
 
-let computerChoice = getComputerChoice()
-let humanChoice = getHumanChoice()
+function playGame() {
 
-playRound(humanChoice, computerChoice);
+    for (i = 1; i <= 5; i++) {
+        let computerChoice = getComputerChoice()
+        let humanChoice = getHumanChoice()  
+        playRound(humanChoice, computerChoice)
+    }
+     console.log("Human = " + humanScore + " Robot = " + computerScore)
+}
+
+playGame()
+
+
 
